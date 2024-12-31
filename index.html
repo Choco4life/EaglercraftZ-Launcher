@@ -21,18 +21,21 @@
     <div class="launcher-container">
         <div class="background"></div>
         <div class="content">
-            <h1>Choose a runtime</h1>
-	    <h2>Using Wasm may not work on some devices</h2>
-	    <button id="playButton">Play</button>
-            <div class="menu">
-                <label for="gameSelect">Select Game:</label>
+            <div class="actual-content">
+                <h1>Choose a runtime</h1>
+	            <h2 class="ps">Using Wasm may not work on some devices</h2>
+                <div class="menu">
+                <label for="gameSelect">Select Version:</label>
                 <select id="gameSelect">
                     <option value="javascript/index.html">EaglercraftZ Javascript</option>
                     <option value="wasm/index.html">EaglercraftZ Wasm</option>
-                </select>
+                </select><br><br>
+                <button id="playButton" onclick="play()">Play</button>
             </div>
-        </h2></div>
+        </h2>
+            </div>
+        </div>
     </div>
-    <script src="js/.-3747-script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
