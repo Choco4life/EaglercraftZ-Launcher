@@ -30,12 +30,32 @@
                     <option value="javascript/index.html">EaglercraftZ Javascript</option>
                     <option value="wasm/index.html">EaglercraftZ Wasm</option>
                 </select><br><br>
-                <button id="playButton" onclick="play()">Play</button>
+                <div class="container">
+                    <button id="playButton" onclick="play()">Play</button>
+                    <button id="playButton" onclick="settings()">Settings</button>
+                </div>
             </div>
         </h2>
             </div>
         </div>
     </div>
+
+    <div id="settings-cont">
+
+        <h1>Settings</h1>
+
+        <div class="container">
+            <h3>Example</h3>
+            <div class="toggle">
+                <input type="checkbox"/>
+                <label></label>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="overlay"></div>
     <script src="script.js"></script>
 </body>
 </html>

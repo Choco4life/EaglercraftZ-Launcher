@@ -7,12 +7,12 @@ body {
 
 @font-face {
     font-family: ttbold;
-    src: url(https://watchskibidi.github.io/assets/fonts/ttbold.ttf);
+    src: url(fonts/notosans.ttf);
 }
 
 @font-face {
     font-family: tiktok;
-    src: url(https://watchskibidi.github.io/assets/fonts/tiktok.ttf);
+    src: url(fonts/notosans.ttf);
 }
 
 .launcher-container {
@@ -26,7 +26,7 @@ body {
 }
 
 .background {
-    background: url('../images/background.jpg') no-repeat center center/cover;
+    background: url('../images/background.png') no-repeat center center/cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -38,22 +38,27 @@ body {
 }
 
 .content {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
-    border-radius: 35px;
+    border-radius: 0px;
     width: 500px;
     height: 300px;
     margin: 0;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 40px;
 }
 
 h2 {
     margin-bottom: 20px;
-    font-size: 1vw;
+    font-size: 17px;
     font-weight: bold;
     text-align: center;
     line-height: 1.5;
@@ -61,21 +66,22 @@ h2 {
 
 
 button {
-    background-color: dodgerblue;
+    background-color: rgb(4, 134, 0);
     color: white;
     border: none;
-    padding: 10px 20px;
     font-size: 20px;
     width: 200px;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 0px;
     margin-bottom: 20px;
     transition: 0.2s;
     font-family: ttbold;
+    padding: 15px;
+    margin: 5px;
 }
 
 button:hover {
-    scale: 1.2;
+    background-color: rgb(4, 109, 0);
 }
 
 .menu {
@@ -92,10 +98,15 @@ select {
     color: white;
     font-family: tiktok;
     font-size: 17px;
-    padding: 10px;
-    border-radius: 15px;
+    border-radius: 0px;
+    margin-top: 0px;
     border: none;
     background-color: rgb(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+select:focus {
+    outline: none;
 }
 
 .ps {
@@ -107,3 +118,130 @@ select {
 .actual-content {
     margin-top: 50px;
 }
+
+#settings-cont {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border-radius: 0;
+    padding: 20px;
+    height: 600px;
+    width: 350px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-align: center;
+}
+
+#settings-cont.scale-in {
+    animation: scaleIn 0.3s ease;
+}
+
+#settings-cont.scale-out {
+    animation: scaleOut 0.3s ease;
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  
+  @keyframes scaleOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#overlay.visible {
+    display: block;
+    opacity: 1;
+}
+
+#settings-cont h3 {
+    font-size: 25px;
+    font-weight: 550;
+    margin-right: 175px;
+}
+
+.toggle {
+    position: relative;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    box-sizing:border-box;
+    margin-top: 28px;
+  }
+  .toggle input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .toggle label {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    box-sizing:border-box;
+  }
+  .toggle label:before {
+    content: '';
+    background: #bbb;
+    height: 20px;
+    width: 64px;
+    position: relative;
+    display: inline-block;
+    box-sizing:border-box;
+    transition: 0.2s ease-in;
+  }
+  .toggle label:after {
+    content: '';
+    position: absolute;
+    border: 2px solid #ddd;
+    background: #fff;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    left: 0;
+    z-index: 2;
+    box-sizing:border-box;
+    box-shadow: 0 0 5px #0002;
+    transition: 0.2s ease-in;
+  }
+  .toggle input[type="checkbox"]:hover + label:after  {
+      box-shadow: 0 2px 15px 0 #0002, 0 3px 8px 0 #0001;
+  }
+  .toggle input[type="checkbox"]:checked + label:before {
+    background: rgb(3, 78, 0);
+  }
+  .toggle input[type="checkbox"]:checked + label:after {
+    border-color: rgb(4, 134, 0) ;
+    background-color: rgb(6, 167, 0);
+    left: 38px;
+  }
