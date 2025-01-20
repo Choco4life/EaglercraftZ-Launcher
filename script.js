@@ -23,6 +23,7 @@ function settings() {
 function close() {
     const popup = document.getElementById('settings-cont');
     const overlay = document.getElementById('overlay');
+    console.log('close');
     if (popup && overlay) {
         overlay.classList.remove('visible');
         popup.classList.remove('scale-in');
@@ -37,3 +38,17 @@ function close() {
         );
     }
 }
+
+const closeButton = document.getElementById('close-button');
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        close();
+    }
+});
+
+document.addEventListener('click', (event) => {
+    if (event.target === closeButton) {
+        close();
+    }
+});
