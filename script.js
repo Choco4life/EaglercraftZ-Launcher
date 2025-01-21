@@ -1,5 +1,3 @@
-const { profile } = require("console");
-
 const dropdown = document.getElementById('gameSelect');
 
 function play() {
@@ -72,6 +70,6 @@ function closeProfile() {
 
 document.addEventListener('click', (event) => {
     if (event.target === closeProfile) {
-        close();
+        closeProfile();
     }
 });
