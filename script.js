@@ -1,3 +1,5 @@
+const { profile } = require("console");
+
 const dropdown = document.getElementById('gameSelect');
 
 function play() {
@@ -49,6 +51,27 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('click', (event) => {
     if (event.target === closeButton) {
+        close();
+    }
+});
+
+function openProfile() {
+    const profilePopup = document.getElementById('profile-popup');
+
+    profilePopup.style.top = '10px'
+    profilePopup.style.height = '175px'
+
+    console.log('openProfile');
+}
+
+function closeProfile() {
+    const profilePopup = document.getElementById('profile-popup');
+
+    profilePopup.style.top = '-200px'
+}
+
+document.addEventListener('click', (event) => {
+    if (event.target === closeProfile) {
         close();
     }
 });

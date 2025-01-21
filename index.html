@@ -22,7 +22,7 @@
         <div class="background"></div>
         <div class="content">
             <div class="actual-content">
-                <h1>Choose a runtime</h1>
+                <h1 style="margin-top: -21px;">Choose a runtime</h1>
 	            <h2 class="ps">Using Wasm may not work on some devices</h2>
                 <div class="menu">
                 <label for="gameSelect">Select Version:</label>
@@ -57,6 +57,21 @@
             <button id="close-button">Close</button>
             <p><i>Or press Escape</i></p>
         </div>
+
+    </div>
+
+    <img src="images/profile.png" alt="" class="profile-button" onclick="openProfile()">
+
+    <div id="profile-popup">
+
+        <h1 style="margin-top: 10px;">Profile</h1>
+
+        <div class="container">
+            <img src="images/profile.png" alt="" style="height: 65px;">
+            <input type="text" name="" id="" placeholder="Enter a username...">
+        </div>
+
+        <p id="close-profile" onclick="closeProfile()">&times;</p>
 
     </div>
 
