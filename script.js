@@ -73,3 +73,43 @@ document.addEventListener('click', (event) => {
         closeProfile();
     }
 });
+
+window.onload = music;
+
+const audioFiles = [
+    "1.mp3",
+    "2.mp3",
+    "3.mp3",
+    "4.mp3"
+];
+
+const audio = new Audio();
+let isMusicEnabled = true;
+
+function music() {
+    if (!isMusicEnabled) return;
+    const randomIndex = Math.floor(Math.random() * audioFiles.length);
+    audio.src = audioFiles[randomIndex];
+    audio.play();
+} 
+
+audio.addEventListener("ended", music);
+
+function toggleMusic() {
+    isMusicEnabled = !isMusicEnabled;
+    if (!isMusicEnabled) {
+        music();
+    } else {
+        audio.pause();
+    }
+}
+
+window.addEventListener('change', event => {
+    const musicToggle = document.getElementById('musicToggle');
+
+    if (musicToggle.checked === true) {
+        music();
+    } else {
+        audio.pause();
+    }
+})
